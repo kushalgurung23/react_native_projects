@@ -11,10 +11,10 @@ export default function App() {
   // Array with 9 elements. Fill with word 'empty' from 0 index up to 8th index
   const [gameState, setGameState] = useState(new Array(9).fill('empty', 0, 9))
 
-  const reloadGame = () => {
+  const reloadGame = () => {    
     setIsCross(false)
     setGameWinner('')
-    setGameState(new Array().fill('empty', 0, 9))
+    setGameState(new Array(9).fill('empty', 0, 9))
   }
   
   const checkIsWinner = () => {
