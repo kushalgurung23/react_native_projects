@@ -90,8 +90,6 @@ const App = (): JSX.Element => {
       title='Save greeting'
       onPress={saveGreeting}
       />
-      <StatusBar 
-      />
     </View>
   )
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>554127776289-2vbvnp3dgrk57dsj7u313pm5rc2fnc6p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.554127776289-2vbvnp3dgrk57dsj7u313pm5rc2fnc6p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAczRiVT3ofk9Ve-S4cAP1sF8w3mtSAJ5U</string>
+	<key>GCM_SENDER_ID</key>
+	<string>554127776289</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.apexsolutionslimited.googlesignin</string>
+	<key>PROJECT_ID</key>
+	<string>eduman-23</string>
+	<key>STORAGE_BUCKET</key>
+	<string>eduman-23.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:554127776289:ios:02078464aa805a9c33e160</string>
+</dict>
+</plist>
