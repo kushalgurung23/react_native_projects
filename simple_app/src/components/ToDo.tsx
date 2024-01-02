@@ -10,21 +10,24 @@ const ToDo = () => {
   
   return (
     <View style={styles.mainContainer}>
-      <Text>ToDo</Text>
+      <Text style={styles.titleTxt}>Todo:</Text>
+      {todos.length===0 ? <Text>No todo list</Text> :
       <FlatList
-        data={todos}
-        keyExtractor={todo => todo.id.toString()}
-        renderItem={({item}) => (
-          <View style={styles.todoContainer}>
-            <Text style={styles.todoText}>{item.text}</Text>
-            <Button
-              title="Remove"
-              onPress={() => dispatch(removeTodo(item.id))}
-              color={'red'}
-            />
-          </View>
-        )}
-      />
+      data={todos}
+      keyExtractor={todo => todo.id.toString()}
+      renderItem={({item}) => (
+        <View style={styles.todoContainer}>
+          <Text style={styles.todoText}>{item.text}</Text>
+          <Button
+            title="Remove"
+            onPress={() => dispatch(removeTodo(item.id))}
+            color={'red'}
+          />
+        </View>
+      )}
+    />
+      }
+      
     </View>
   );
 }
@@ -32,12 +35,13 @@ const ToDo = () => {
 export default ToDo
 
 const styles = StyleSheet.create({
+  titleTxt: {
+    marginVertical: 10
+  },
   mainContainer: {
-    paddingHorizontal: 10,
     flex: 1,
     width: '100%',
-    flexDirection: 'column',
-    alignItems: 'flex-start'
+    marginBottom: 15,
   },
   todoContainer: {
     padding: 10,
@@ -52,7 +56,8 @@ const styles = StyleSheet.create({
   todoText: {
     fontSize: 20,
     color: 'white',
-    marginRight: 30
+    marginRight: 30,
+    flex: 1,
   },
   btnText: {
     fontSize: 20,

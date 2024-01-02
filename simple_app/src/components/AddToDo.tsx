@@ -15,14 +15,14 @@ const AddToDo = () => {
     }
     
   return (
-    <View>
+    <View style={styles.addTodoContainer}>
       <TextInput
         value={input}
         onChangeText={setInput}
-        placeholder="Enter"
+        placeholder="Enter new todo"
       />
-      <TouchableOpacity onPress={addToHandler}>
-        <Text> Add</Text>
+      <TouchableOpacity style={styles.btn} onPress={addToHandler}>
+        <Text>Add</Text>
       </TouchableOpacity>
     </View>
   );
@@ -30,4 +30,17 @@ const AddToDo = () => {
 
 export default AddToDo
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  addTodoContainer: {
+    marginHorizontal: 10,
+    marginVertical: 15,
+    alignItems: 'flex-start',
+    backgroundColor: 'white'
+  },
+  btn: {
+    marginTop: 10,
+    borderRadius: 10,
+    backgroundColor: 'lightgreen',
+    padding: 10
+  }
+})

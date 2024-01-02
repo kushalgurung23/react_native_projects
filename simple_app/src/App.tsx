@@ -1,9 +1,10 @@
-import { Button, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, {useEffect, useState } from 'react'
+import React from 'react'
+import { SafeAreaView, StyleSheet } from 'react-native'
 import { Provider } from 'react-redux'
-import { store } from './state/store'
-import ToDo from './components/ToDo'
 import AddToDo from './components/AddToDo'
+import ToDo from './components/ToDo'
+import ApiTodo from './components/ApiTodo'
+import { store } from './state/store'
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <SafeAreaView style={styles.container}>
         <AddToDo />
         <ToDo />
+        <ApiTodo/>
       </SafeAreaView>
     </Provider>
   );
@@ -20,8 +22,10 @@ export default App
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    flex: 1
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    flex: 1,
+    width: '100%',
+    flexDirection: 'column',
   }
 })
