@@ -7,6 +7,7 @@ import {GOOGLE_MAPS_APIKEY, CHELSEA} from "@env"
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../state/store';
 import { setDestination, setOrigin } from '../slices/navSlice';
+import NavFavourites from '../components/NavFavourites';
 const HomeScreen = () => {
   const dispatch : AppDispatch = useDispatch()
   return (

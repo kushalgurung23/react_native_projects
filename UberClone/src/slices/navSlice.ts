@@ -16,7 +16,15 @@ interface Nav {
         },
         description: string | null
     } | null,
-    travelTimeInformation: Date | null
+    travelTimeInformation: {
+        distance: {
+            text: string 
+        },
+        duration: {
+            text: string,
+            value: number
+        }
+    } | null
 }
 
 const initialState: Nav = {
@@ -29,10 +37,10 @@ const initialState: Nav = {
   },
   destination: {
     location: {
-      lat: 51.5072,
-      lon: 0.1276,
+      lat: 22.3578,
+      lon: 114.1298,
     },
-    description: 'London, beautiful city of the UK',
+    description: 'Kwai Fong, the place in Hong Kong where people love to work',
   },
   travelTimeInformation: null,
 };
