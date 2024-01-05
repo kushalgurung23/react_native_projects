@@ -16,14 +16,15 @@ const UseMemo = () => {
       <Text style={styles.text}>Number of items: {count}</Text>
       <Text style={styles.text}>Selected Items: {selectedItem?.id}</Text>
       <Button
-      color={'lightblue'}
-      title='Increment'
-      onPress={() => {
-        setCount(count+1)
-      }}
+        color={'lightblue'}
+        title="Increment"
+        onPress={() => {
+          setCount(count + 1);
+        }}
       />
     </View>
-  )
+  );
+
 }
 
 export default UseMemo
