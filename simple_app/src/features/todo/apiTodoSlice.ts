@@ -46,7 +46,9 @@ export const apiTodoSlice = createSlice({
             state.isLoading = false;
             state.isError = true;
         })
-    }
+        
+    },
+    
 })
 
 export default apiTodoSlice.reducer

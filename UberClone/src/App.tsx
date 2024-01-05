@@ -16,6 +16,19 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
 const App = () => {
+
+  const func1 = () => {
+
+  }
+
+  const func2 = () => {
+
+  }
+
+  const func3 = () => {
+
+  }
+
   return (
     <Provider store={store}>
       <NavigationContainer>
