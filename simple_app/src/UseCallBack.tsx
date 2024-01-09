@@ -33,7 +33,7 @@ const UseCallBack = () => {
       }, [users, allUsers])
 
       const shuffleUsers = () => {
-        const newUserList = allUsers.reverse()
+        const newUserList = allUsers.reverse();
         setUsers(newUserList)
       }
 

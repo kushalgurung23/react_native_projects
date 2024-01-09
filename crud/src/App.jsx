@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import UserScreen from './screens/UserScreen';
 import ReadUserScreen from './screens/ReadUserScreen';
+import UpdateUserScreen from './screens/UpdateUserScreen';
 
 const Stack = createNativeStackNavigator()
 
@@ -28,6 +29,11 @@ const App = () => {
               <Stack.Screen
                 name="ReadUserScreen"
                 component={ReadUserScreen}
+                options={{headerShown: false}}
+              />
+              <Stack.Screen
+                name="UpdateUserScreen"
+                component={UpdateUserScreen}
                 options={{headerShown: false}}
               />
             </Stack.Navigator>

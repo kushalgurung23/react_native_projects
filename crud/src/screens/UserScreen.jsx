@@ -2,48 +2,73 @@ import { StyleSheet, Text, View } from 'react-native';
 import { CustomAppbar } from '../components/UI/CustomAppbar';
 import CustomButton from '../components/UI/CustomButton';
 import CustomTextInput from '../components/UI/CustomTextInput';
-import { useState } from 'react';
-import { createUser } from '../services/slices/useDetailsSlice';
+import { useCallback, useEffect, useState } from 'react';
+import { createUser, searchUser } from '../services/slices/useDetailsSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
 export default function UserScreen() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
+  
+  const [searchKeyword, setSearchKeyword] = useState('')
 
-  const [name, setName] = useState(null);
-  const [age, setAge] = useState(null);
-  const [gender, setGender] = useState(null);
-  const [email, setEmail] = useState(null);
+  const onSearch = useCallback((text) => {
+    setSearchKeyword(text)
+  }, [])
 
-  const onSearch = (text) => {
-    // console.log(`${text}`);
-  };
+  useEffect(() => {
+    dispatch(searchUser(searchKeyword))
+  }, [searchKeyword])
+
+  const [newUser, setNewUser] = useState({});
+
+  const onUserDataChange = (key, value) => {
+    setNewUser((prevData) => ({
+      ...prevData,
+      [key]: value
+    }))
+  }
 
   const onAdd = () => {
-    const data = {
-      name,
-      age,
-      gender,
-      email
-    }
-    console.log(data);
-    dispatch(createUser(data))
+    dispatch(createUser(newUser))
+    setNewUser({})
     navigation.push('ReadUserScreen');
   };
 
   return (
-    <View >
+    <View>
       <CustomAppbar title="Users" />
       <View style={styles.mainContainer}>
-        <CustomTextInput onChange={onSearch} placeholder="Enter keyword.." />
+        <CustomTextInput value={searchKeyword} onChange={onSearch} placeholder="Enter keyword.." />
         <Text style={{marginVertical: 10}}>Add User</Text>
-        <CustomTextInput onChange={setName} placeholder="Name" />
-        <CustomTextInput onChange={setEmail} placeholder="Email" />
-        <CustomTextInput onChange={setAge} placeholder="Age" />
-        <CustomTextInput onChange={setGender} placeholder="Gender" />
+        <CustomTextInput
+        value={newUser && newUser.name}
+          onChange={value => onUserDataChange('name', value)}
+          placeholder="Name"
+        />
+        <CustomTextInput
+        value={newUser && newUser.email}
+          onChange={value => onUserDataChange('email', value)}
+          placeholder="Email"
+        />
+        <CustomTextInput
+        value={newUser && newUser.age}
+          onChange={value => onUserDataChange('age', value)}
+          placeholder="Age"
+        />
+        <CustomTextInput
+        value={newUser && newUser.gender}
+          onChange={value => onUserDataChange('gender', value)}
+          placeholder="Gender"
+        />
         <View style={{height: 10}}></View>
-        <CustomButton buttonText="Add" handleButton={onAdd} />
+        <CustomButton
+          buttonText="Add"
+          backgroundColor={'black'}
+          textColor={'white'}
+          handleButton={onAdd}
+        />
       </View>
     </View>
   );

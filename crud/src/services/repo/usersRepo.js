@@ -13,8 +13,6 @@ class UserRepo {
             return response;
         }
         catch (error) {
-            console.log('Error occurred');
-            console.log(error);
             return rejectWithValue(error)
         }
     }
@@ -30,6 +28,35 @@ class UserRepo {
             return response;
         }
         catch(error) {
+            return rejectWithValue(error)
+        }
+    }
+
+    static deleteUser = async ({id, rejectWithValue}) => {
+        try {
+            const response = await fetch(`${BASEURL}users/${id}`, {
+              method: 'DELETE'
+            });
+            return response;
+        }
+        catch(error) {
+            return rejectWithValue(error)
+        }
+    }
+
+    static updateUser = async ({data, rejectWithValue}) => {
+        try {
+            console.log(`${BASEURL}users/${data.id}`);
+            const response = await fetch(`${BASEURL}users/${data.id}`, {
+                method: 'PUT',
+                headers: {
+                'Content-type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            return response;
+        }
+        catch (error) {
             return rejectWithValue(error)
         }
     }
