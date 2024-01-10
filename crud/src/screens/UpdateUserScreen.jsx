@@ -49,7 +49,7 @@ export default function UpdateUserScreen({route}) {
         <Text style={{marginVertical: 10}}>Update User</Text>
         <CustomTextInput value={ userData && userData.name} onChange={(value) => onUserDetailsChange('name', value)} placeholder="Name" />
         <CustomTextInput value={ userData && userData.email} onChange={(value) => onUserDetailsChange('email', value)} placeholder="Email" />
-        <CustomTextInput value={ userData && userData.age} onChange={(value) => onUserDetailsChange('age', value)} placeholder="Age" />
+        <CustomTextInput value={ userData && userData.age ? String(userData.age) : ''} onChange={(value) => onUserDetailsChange('age', value)} placeholder="Age" />
         <CustomTextInput value={ userData && userData.gender} onChange={(value) => onUserDetailsChange('gender', value)} placeholder="Gender" />
         <View style={{height: 10}}></View>
         <CustomButton buttonText="Update" backgroundColor={'black'} textColor={'white'} handleButton={onUpdate} />

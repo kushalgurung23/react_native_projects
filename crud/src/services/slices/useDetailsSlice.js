@@ -59,7 +59,7 @@ export const userDetails = createSlice({
     reducers: {
         searchUser: (state, action) => {
             state.searchUserData = action.payload
-            console.log(state.searchUserData);
+            console.log(`search data is ${state.searchUserData}`);
         }
     },
     extraReducers: (builder) => {

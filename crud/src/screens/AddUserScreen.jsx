@@ -7,20 +7,11 @@ import { createUser, searchUser } from '../services/slices/useDetailsSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 
-export default function UserScreen() {
+export default function AddUserScreen() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
-  
-  const [searchKeyword, setSearchKeyword] = useState('')
 
-  const onSearch = useCallback((text) => {
-    setSearchKeyword(text)
-  }, [])
-
-  useEffect(() => {
-    dispatch(searchUser(searchKeyword))
-  }, [searchKeyword])
-
+  // ADD NEW USER
   const [newUser, setNewUser] = useState({});
 
   const onUserDataChange = (key, value) => {
@@ -40,7 +31,6 @@ export default function UserScreen() {
     <View>
       <CustomAppbar title="Users" />
       <View style={styles.mainContainer}>
-        <CustomTextInput value={searchKeyword} onChange={onSearch} placeholder="Enter keyword.." />
         <Text style={{marginVertical: 10}}>Add User</Text>
         <CustomTextInput
         value={newUser && newUser.name}

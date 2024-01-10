@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './services/state/store';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import UserScreen from './screens/UserScreen';
+import AddUserScreen from './screens/AddUserScreen';
 import ReadUserScreen from './screens/ReadUserScreen';
 import UpdateUserScreen from './screens/UpdateUserScreen';
 
@@ -23,7 +23,7 @@ const App = () => {
             <Stack.Navigator initialRouteName="UserScreen">
               <Stack.Screen
                 name="UserScreen"
-                component={UserScreen}
+                component={AddUserScreen}
                 options={{headerShown: false}}
               />
               <Stack.Screen
